@@ -28,19 +28,50 @@
                 </div>
 
                 <div class="col-md-2">
-                    <div>Blog tags go here!</div>
+                    {% for tag in all_tags %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="{% url 'tag' tag.pk %}"><li>{{ tag }} ({{ tag.posts.count }})</li></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                    {% for author in all_authors %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="{% url 'author' author.pk %}"><li>{{ author }} ({{ author.posts.count }})</li></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                    {% for post in post_dates %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <li>{{ post.created }}</li>
+{#                                <a href="{% url 'date' author.pk %}"><li>{{ author }} - {{ author.posts.count }}</li></a>#}
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
 
             <hr>
 
             <div class="row">
-                <div class="col-md-12">Latest blog post goes here!</div>
+                <div class="col-md-6 well">
+                    <h3>Checkout our latest post!</h3>
+                    <h4>{{ latest_post.title }}</h4>
+                    <div>by {{ latest_post.author }} on {{ latest_post.created }}</div>
+                    <a href="{% url 'post' latest_post.pk %}">Read it!</a>
+                </div>
             </div>
 
             <hr>
 
             <div class="footer">
+                <div class="pull-right">
+                    <a href="{{ ad.url }}"><img width="100px" src="{{ ad.image.url }}"></a>
+                </div>
                 <p>&copy; My Blog 2014</p>
             </div>
         </div>

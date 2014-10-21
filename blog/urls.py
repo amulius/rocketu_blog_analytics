@@ -6,4 +6,6 @@ urlpatterns = patterns('',
     url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
     url(r'^blog/$', 'blog.views.blog', name='blog'),
     url(r'^blog/(\d+)/$', 'blog.views.post', name='post'),
+    url(r'^blog/tag/(\d+)/$', 'blog.views.tag', name='tag'),
+    url(r'^blog/author/(\d+)/$', 'blog.views.author', name='author'),
 )

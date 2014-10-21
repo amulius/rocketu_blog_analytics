@@ -1,0 +1,7 @@
+{% extends 'base_analytics.html' %}
+
+{% block main %}
+    {% for location in locations %}
+        <p>{{ location }} has been viewed {{ location.views.count }} times</p>
+    {% endfor %}
+{% endblock main %}

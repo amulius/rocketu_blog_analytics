@@ -14,3 +14,15 @@ def post(request, pk):
     return render(request, 'post.html', {
         'post': post_obj
     })
+
+
+def tag(request, pk):
+    return render(request, 'blog.html', {
+        'posts': Post.objects.filter(tags=pk).order_by('-created')
+    })
+
+
+def author(request, pk):
+    return render(request, 'blog.html', {
+        'posts': Post.objects.filter(author=pk).order_by('-created')
+    })
