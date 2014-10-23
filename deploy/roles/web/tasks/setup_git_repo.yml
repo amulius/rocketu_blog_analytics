@@ -10,3 +10,4 @@
   file: state=directory
         path={{ project_path }}
         owner=ubuntu
+  tags: git
