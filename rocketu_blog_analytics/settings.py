@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'raven.contrib.django.raven_compat',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,7 +65,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "blog.context_processors.all_tags",
     "blog.context_processors.all_authors",
     "analytics.context_processors.location",
-    "analytics.context_processors.state_ads",
+    # "analytics.context_processors.state_ads",
     # "blog.context_processors.post_dates"
 )
 
@@ -101,6 +102,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/staticfiles/'
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 MEDIA_URL = "/media/"

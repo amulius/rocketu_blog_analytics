@@ -8,10 +8,10 @@ def location(request):
     }
 
 
-def state_ads(request):
-    if request.location['region'] is not None:
-        return {
-            'ad': Ad.objects.filter(state=STATES_NORMALIZED[request.location['region'].encode().lower()]).order_by('?')[0]
-        }
-    else:
-        pass
+# def state_ads(request):
+#     if request.location['region'] is not None:
+#         return {
+#             'ad': Ad.objects.filter(state=STATES_NORMALIZED[request.location['region'].encode().lower()]).order_by('?')[0]
+#         }
+#     else:
+#         pass

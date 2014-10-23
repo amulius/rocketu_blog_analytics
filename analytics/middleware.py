@@ -30,10 +30,10 @@ class SaveViewMiddleware(object):
         # print request.location['city'], request.location['region'], request.location['country']
         # print request.location['latitude'], request.location['longitude']
         path_list = request.META['PATH_INFO'].split('/')
-        print request.META['PATH_INFO']
-        print type(path_list[1])
-        print path_list[1] == u'admin'
-        print path_list[1] == u'analytics'
+        # print request.META['PATH_INFO']
+        # print type(path_list[1])
+        # print path_list[1] == u'admin'
+        # print path_list[1] == u'analytics'
         if path_list[1] != u'admin' and path_list[1] != u'analytics':
             page, created = Page.objects.get_or_create(url=request.META['PATH_INFO'])
             location, created = Location.objects.get_or_create(city=request.location['city'],

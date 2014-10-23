@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^blog/(\d+)/$', 'blog.views.post', name='post'),
     url(r'^blog/tag/(\d+)/$', 'blog.views.tag', name='tag'),
     url(r'^blog/author/(\d+)/$', 'blog.views.author', name='author'),
+    url(r'^error/$', 'blog.views.error', name='error'),
 )
